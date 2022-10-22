@@ -946,11 +946,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73966d3c4be7a7246be26257e05e924f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 1817999819}
+  _gameManager: {fileID: 849404575}
   target: {fileID: 4944711751256663525, guid: ec88296aa0d4e484eb461508dcc13b09, type: 3}
   fader: {fileID: 503716885}
-  lvlNumber: 1
-  background: {fileID: 1817999819}
   scoreText: {fileID: 721959386}
+  lvlNumber: 1
 --- !u!1 &1817999816
 GameObject:
   m_ObjectHideFlags: 0

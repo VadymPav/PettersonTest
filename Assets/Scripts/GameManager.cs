@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Background background;
+    [SerializeField] private GameManager _gameManager;
     
     public Target target;
     public Fader fader;
@@ -37,7 +39,8 @@ public class GameManager : MonoBehaviour
 
         Vector3 randomPosition = new Vector3(randomX, randomY, 0);
 
-        Instantiate(target, randomPosition, Quaternion.identity);
+        var obj = Instantiate(target, randomPosition, Quaternion.identity);
+        obj.Init(_gameManager);
     }
 
     public void IncrementScore(float value)

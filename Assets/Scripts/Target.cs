@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour, IPointerDownHandler
 {
-    public GameManager gameManager;
+    private GameManager gameManager;
     
     private Renderer _renderer;
     private Color newColor;
@@ -18,9 +18,9 @@ public class Target : MonoBehaviour, IPointerDownHandler
     private float value;
     private float speed;
     // Start is called before the first frame update
-    void Start()
+    public void Init(GameManager _gameManager)
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = _gameManager;
         value = Random.Range(0.5f, 3f);
         transform.localScale = new Vector3(value, value, 0f);
         speed = (5 * gameManager.lvlNumber) / value;
