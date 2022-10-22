@@ -54,8 +54,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Target.cs" />
-     <Compile Include="Assets\Scripts\Deleter.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
+     <Compile Include="Assets\Scripts\Deleter.cs" />
+     <Compile Include="Assets\Scripts\Background.cs" />
+     <Compile Include="Assets\Scripts\Fader.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/Unity/2020.3.23f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
