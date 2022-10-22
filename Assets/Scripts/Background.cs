@@ -13,7 +13,7 @@ public class Background : MonoBehaviour
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         newSprite = Resources.LoadAll<Sprite>("Sprites");
-        spriteRenderer.sprite = newSprite[Random.Range(1,5)];  
+        spriteRenderer.sprite = newSprite[Random.Range(0, newSprite.Length)];  
     }
 
 }

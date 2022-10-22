@@ -5,24 +5,22 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour, IPointerDownHandler
 {
     public GameManager gameManager;
-
     
-
-    private float value;
-    private Color newColor;
-    private float speed;
-
     private Renderer _renderer;
+    private Color newColor;
+    
+    private float value;
+    private float speed;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        
         value = Random.Range(0.5f, 3f);
         transform.localScale = new Vector3(value, value, 0f);
         speed = (5 * gameManager.lvlNumber) / value;
@@ -38,7 +36,7 @@ public class Target : MonoBehaviour
         transform.Translate(Vector3.down * Time.deltaTime * speed);
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         gameManager.IncrementScore(value);
         

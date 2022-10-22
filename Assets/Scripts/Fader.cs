@@ -5,7 +5,6 @@ using System.Collections;
  
 public class Fader : MonoBehaviour
 {
-
     public Text levelName;
     public GameManager GameManager;
 
